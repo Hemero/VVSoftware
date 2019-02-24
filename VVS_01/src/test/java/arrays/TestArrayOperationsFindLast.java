@@ -23,7 +23,14 @@ public class TestArrayOperationsFindLast {
 	    assertThrows(NullPointerException.class, () -> {
 	    	ArrayOperations.findLast(x, y);
 	    });
-		
+	}
+	
+	@Test
+	public void testWithNoArguments() {
+		int y = 1;
+		int[] x = { };
+		int idx = ArrayOperations.findLast(x, y);
+		assertEquals(-1, idx, "first index");
 	}
 
 	@Test // should fail!

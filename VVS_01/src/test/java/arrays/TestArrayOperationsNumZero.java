@@ -27,7 +27,7 @@ public class TestArrayOperationsNumZero {
 
 	@Test
 	public void testWithEmptyArray() {
-		int x[] = {};
+		int x[] = { };
 		int n = ArrayOperations.numZeros(x);
 		assertEquals(0, n, "count of zeros");
 	}
