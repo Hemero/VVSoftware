@@ -30,15 +30,42 @@ public class Exercice1 {
 	// Identify a test case that leads to failure.
 	// Reachability, infection and propagation conditions met.
 	/*
-		numZeros test case: x = {0, 1, 2, 3}
+		numZeros test case: x = {0}
+			1: <x={0}, PC=[int count = 0 (25)]>
+			2: <x={0}, count=0, PC=[int i=1 (27)]>
+			3: <x={0}, count=0, i=1, PC=[i < x.length (27)]>
+			4: <x={0}, count=0, i=1, PC=[return count (32)]> <-- First error state
 		
-		findLast test case: x = {0, 0, 1, 2, 3}, y = 0
+		findLast test case: x = {0}, y = 0
+			1: <x={0}, PC=[if(x==null)(43)]>
+			2: <x={0}, PC=[int i=x.length-1 (46)]>
+			3: <x={0}, i=x.length-1, PC=[i>0 (46)]>
+			4: <x={0}, i=x.length-1, PC=[return -1 (51)]> <-- First error state
 		
-		lastZero test case: x = {0, 1, 2, 3, 0}
+		lastZero test case: x = {0, 0}
+			1: <x={0, 0}, PC=[if(x==null)(61)]>
+			2: <x={0, 0}, PC=[int i=0 (64)]>
+			3: <x={0, 0}, i=0, PC=[i<x.length (64)]>
+			4: <x={0, 0}, i=0, PC=[if(x[i]==0) (66)]>
+			5: <x={0, 0}, i=0, PC=[return i (67)]> <-- First error state
 		
-		countPositive test case: x = {0, 1, 2, 3}
-		
-		oddOrPos test case: x = {-1, 0, 1, 2, 3}
+		countPositive test case: x = {0, 1}
+			1: <x={0, 1}, PC=[if(x==null)(79)]>
+			2: <x={0, 1}, PC=[int count=0 (81)]>
+			3: <x={0, 1}, count=0, PC=[i<x.length (82)]>
+			4: <x={0, 1}, count=0, PC=[if(x[i]>=0) (85)]>
+			5: <x={0, 1}, count=0, PC=[count++ (86)]>
+			6: <x={0, 1}, count=1, PC=[i++ (82)]> <-- First error state
+			...
+			
+		oddOrPos test case: x = {-1}
+			1: <x={-1}, PC=[if(x==null)(98)]>
+			2: <x={-1}, PC=[int count = 0(100)]>
+			3: <x={-1}, count=0, PC=[int i = 0 (101)]>
+			4: <x={-1}, count=0, i=0, PC=[i < x.length (101)]>
+			5: <x={-1}, count=0, i=0, PC=[if(x[i] % 2 == 1 || x[i] > 0) (103)]>
+			6: <x={-1}, count=0, i=0, PC=[i++ (103)]> <-- First error state
+			...
 	*/
 
 	// ------------------------------------------------------------------------
