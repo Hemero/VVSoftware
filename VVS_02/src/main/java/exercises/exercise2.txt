@@ -1,0 +1,47 @@
+// ------------------------------------------------------------------------
+// Question 1:
+// Draw the CFG of isPalindrome
+
+	exercise2-1.svg: visualize on Chrome or Firefox.
+
+
+// ------------------------------------------------------------------------
+// Question 2:
+// Identify TR(NC), TR(EC), TR(EPC)
+
+	TR(NC) = {[0],[1],[2],[3],[4],[5],[6],[7]}
+	TR(EC) = TR(NC) U {[0,1],[0,2],[2,3],[3,5],[3,4],[4,7],[4,6],[6,7],[7,3]}
+	TR(EPC) = TR(EC) U {[0,2,3],[2,3,4],[2,3,5],[3,4,6],[3,4,7],[4,6,7],[4,7,3],[7,3,4],[7,3,5]}
+
+
+// ------------------------------------------------------------------------
+// Question 3:
+// If possible define test sets that satisfy:
+	a) NC but not EC
+		TS1 = {[0,1],[0,2,3,5],[0,2,3,4,6,7,3,5]}
+	
+	b) EC but not EPC
+		TS2 = {[0,1],[0,2,3,4,6,7,3,4,7,3,5]}
+	
+	c) EPC
+		TS3 = TS2 U {[0,2,3,5]}
+		
+
+// ------------------------------------------------------------------------
+// Question 4:
+// Identify TR(PPC). 
+	
+	TR(PPC) = {[0,1],[0,2,3,5],[0,2,3,4,6,7],[0,2,3,4,7],[3,4,6,7,3],
+			   [3,4,7,3],[4,7,3,5],[4,6,7,3,5],[4,6,7,3,4],[4,7,3,4],
+			   [6,7,3,4,6],[7,3,4,7],[7,3,4,6,7]}
+
+// Are there infeasible requirements? 
+
+	Yes, the following test cases are infeasible: {[4,6,7,3,4],[6,7,3,4,6]}
+
+// Define test cases for all the feasible requirements.
+
+	Test cases: TC1 = (null, IllegalArgumentException)
+				TC2 = ("", true)
+				TC3 = ("aaaa", true)
+				TC4 = ("baaa", false)

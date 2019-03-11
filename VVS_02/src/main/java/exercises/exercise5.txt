@@ -1,0 +1,17 @@
+// ------------------------------------------------------------------------
+// Question 1:
+// Draw the call graph for the methods shown
+
+	exercise5-1.svg: visualize on Chrome or Firefox.
+
+// ------------------------------------------------------------------------
+// Question 2:
+// Identify a test set that satisfies method coverage but not call coverage
+
+	TS1 = {(4, 24), (2, 2)}
+
+// ------------------------------------------------------------------------
+// Question 3:
+// Identify a test set that satisfies call coverage
+
+	TS2 = TS1 U {(0, 1)}

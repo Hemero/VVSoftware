@@ -1,0 +1,22 @@
+// ------------------------------------------------------------------------
+// Question 1:
+// Draw the CFG of isPalindrome
+
+	exercise3-1.svg: visualize on Chrome or Firefox.
+
+
+// ------------------------------------------------------------------------
+// Question 2:
+// Identify TR(PPC)
+
+	TR(PPC) = {[0,1],[0,2,3,4],[0,2,3,5],[3,4,3],[4,3,4],[4,3,5]}
+	
+
+// ------------------------------------------------------------------------
+// Question 3:
+// Are there infeasible requirments? Identify test cases that satisfy PPC using best-effort touring
+
+	Yes, the following are infeasible requirments: [0,2,3,5]
+
+	Test Cases: TC1 = []
+				TC2 = [1,2]

@@ -1,0 +1,14 @@
+// ------------------------------------------------------------------------
+// Question 1:
+// What calls are covered by considering test case ("x_1", true)?
+
+	The following calls are considered:
+	{(isValidId, isAlpha), (isValidId, isAlphaOrDigit), (isAlphaOrDigit, isAlpha),
+	(isAlphaOrDigit, isDigit), (isAlpha, isLetter)}
+
+
+// ------------------------------------------------------------------------
+// Question 2:
+// Test case ("y1", true) satisfies method coverage but not call coverage. Why?
+
+	isAlpha is not called.
